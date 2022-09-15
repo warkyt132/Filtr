@@ -1,0 +1,23 @@
+function prinArr(user,pol){
+    let per1
+    const per =JSON.stringify(pol,function replacer(key,values){ 
+        //values=values.peplace
+        per1=JSON.stringify(user,function replacer(keys,valuess){
+          if(key==keys){
+         if (valuess==false){
+           if (values==null){
+            values=1
+           }
+            if(values!=null){
+                values=values.peplace
+        }
+         }
+          }
+          return valuess
+           })  
+    return values
+})
+//console.log(per)
+return per;
+}
+module.exports  = prinArr
