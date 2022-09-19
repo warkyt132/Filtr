@@ -1,23 +1,30 @@
 function prinArr(user,pol){
-    let per1
-    const per =JSON.stringify(pol,function replacer(key,values){ 
-        //values=values.peplace
-        per1=JSON.stringify(user,function replacer(keys,valuess){
-          if(key==keys){
-         if (valuess==false){
-           if (values==null){
-            values=1
-           }
-            if(values!=null){
-                values=values.peplace
+    
+
+    newobj = camelCaseKeysToUnderscore(user,pol);
+
+    function camelCaseKeysToUnderscore(user,pol){
+        if (typeof(user) != "object") return pol;
+        for(let key in user){
+            //console.log(pol[key])
+            if(user[key]==false){
+                // 
+                //console.log[user[key]]            
+                //
+                delete pol[key]
+            }
+            // Recursion
+            if (typeof(user[key]) == "object") {
+                camelCaseKeysToUnderscore(user[key],pol[key]);
+            }
         }
-         }
-          }
-          return valuess
-           })  
-    return values
-})
-//console.log(per)
-return per;
+        return pol;
+    }
+ 
+ // console.log("pol "+ pol)
+   console.log(JSON.stringify(pol))
+    return user ;
+
+//return per;
 }
 module.exports  = prinArr
