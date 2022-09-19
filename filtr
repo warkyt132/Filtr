@@ -22,9 +22,11 @@ function prinArr(user,pol){
     }
  
  // console.log("pol "+ pol)
-   console.log(JSON.stringify(pol))
-    return user ;
+  // console.log(JSON.stringify(pol))
+    return pol ;
 
 //return per;
 }
 module.exports  = prinArr
+
+
