@@ -1,0 +1,7 @@
+function prinArr(pol){
+var jsonxml = require('jsontoxml');
+
+pol=jsonxml(pol);
+return pol;
+}
+module.exports  = prinArr
