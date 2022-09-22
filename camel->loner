@@ -1,0 +1,8 @@
+function prinArr(pol){
+   //Исполбзуем библиотеку "npm install --save camelize2"
+    const camelize = require('camelize2')
+    const camelizedResponse = camelize(pol)
+    return camelizedResponse;
+    }
+    module.exports  = prinArr
+    
