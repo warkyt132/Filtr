@@ -1,5 +1,5 @@
 function prinArr(pol){
-   
+   //внутренние ключи
     camelCaseKeysToUnderscore(pol);
 
    function camelCaseKeysToUnderscore(pol){
@@ -29,31 +29,23 @@ function prinArr(pol){
        }
        return pol;
    }
+   
+   //внешние ключи
    camelCaseKeysToUnderscor(pol);
 
    function camelCaseKeysToUnderscor(pol){
        if (typeof(pol) != "object") return pol;
-   
-       
-   
-          
            for (var key in pol) {
                if (pol.hasOwnProperty(key)) {
                  pol[key.charAt(0).toUpperCase() + key.substring(1)] = pol[key];
+                 if(key.replace(/\s/g, '').length === 0 || isNaN(key)){
+                    delete pol[key]
+                 }
                  
-                 delete pol[key];
                  
                }
            }
-           
-       
-   
-           // Recursion
-          // if (typeof(pol[i]) == "object") {
-          //     pol[i] = camelCaseKeysToUnderscor(pol[i]);
-          // }
-   
-   
+
        return pol;
    }
    return pol;
