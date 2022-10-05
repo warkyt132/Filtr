@@ -18,7 +18,6 @@ function prinArr(dan,fil){
                 }else{
                 fil[key].forEach(danpol=>{
                     if(typeof(dan[key])=="object"){
-                        const std= JSON.stringify(dan[key]) 
                         camelCaseKeysToUnderscore(fil[key],dan[key])
                     }
                     if(dan[key]==danpol){
